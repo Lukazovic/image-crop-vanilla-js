@@ -1,7 +1,7 @@
 const photoFile = document.getElementById('photo-file');
 let photoPreview = document.getElementById('photo-preview');
 let image = new Image();
-
+let photoName;
 // Select & Preview Image
 
 document.getElementById('select-image').onclick = function () {
@@ -11,6 +11,8 @@ document.getElementById('select-image').onclick = function () {
 window.addEventListener('DOMContentLoaded', () => {
   photoFile.addEventListener('change', () => {
     let file = photoFile.files.item(0);
+
+    photoName = file.name;
 
     let reader = new FileReader();
     reader.readAsDataURL(file);
@@ -147,4 +149,16 @@ cropButton.onclick = () => {
 
   // atualizar o preview da imagem
   photoPreview.src = canvas.toDataURL();
+
+  // mostrar botão de download
+  downloadButton.style.display = 'initial';
+};
+
+// Download
+const downloadButton = document.getElementById('download');
+downloadButton.onclick = function () {
+  const a = document.createElement('a');
+  a.download = photoName + '-cropped.png';
+  a.href = canvas.toDataURL();
+  a.click();
 };
