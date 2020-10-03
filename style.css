@@ -111,6 +111,18 @@ img {
   height: auto;
 }
 
+::-moz-selection {
+  background: var(--orange);
+  color: var(--bg);
+  text-shadow: none;
+}
+
+::selection {
+  background: var(--orange);
+  color: var(--bg);
+  text-shadow: none;
+}
+
 /* Image Crop */
 #photo-file {
   display: none;
@@ -125,13 +137,9 @@ img {
   display: none;
 
   border: 2px dashed var(--green);
-
-  /* top: 0;
-  left: 0;
-  width: 200px;
-  height: 200px; */
 }
 
-#crop-image, #download {
+#crop-image,
+#download {
   display: none;
 }
