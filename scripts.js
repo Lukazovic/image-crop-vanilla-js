@@ -17,7 +17,9 @@ window.addEventListener('DOMContentLoaded', () => {
     let reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = function (event) {
+      image = new Image();
       image.src = event.target.result;
+      image.onload = onLoadImage;
     };
   });
 });
@@ -52,8 +54,8 @@ const events = {
   mousemove() {
     const { clientX, clientY } = event;
 
-    endX = event.clientX;
-    endY = event.clientY;
+    endX = clientX;
+    endY = clientY;
 
     if (startSelection) {
       selection.style.display = 'initial';
@@ -85,7 +87,7 @@ Object.keys(events).forEach(eventName => {
 let canvas = document.createElement('canvas');
 let ctx = canvas.getContext('2d');
 
-image.onload = function () {
+function onLoadImage() {
   const { width, height } = image;
 
   canvas.width = width;
@@ -98,7 +100,7 @@ image.onload = function () {
   ctx.drawImage(image, 0, 0);
 
   photoPreview.src = canvas.toDataURL();
-};
+}
 
 // Cortar imagem
 const cropButton = document.getElementById('crop-image');
