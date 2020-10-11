@@ -24,65 +24,6 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Selection tool
-
-const selection = document.getElementById('selection-tool');
-let startX,
-  startY,
-  relativeStartX,
-  relativeStartY,
-  endX,
-  endY,
-  relativeEndX,
-  relativeEndY;
-let startSelection = false;
-
-const events = {
-  mouseover() {
-    this.style.cursor = 'crosshair';
-  },
-  mousedown() {
-    const { clientX, clientY, offsetX, offsetY } = event;
-
-    startX = clientX;
-    startY = clientY;
-    relativeStartX = offsetX;
-    relativeStartY = offsetY;
-
-    startSelection = true;
-  },
-  mousemove() {
-    const { clientX, clientY } = event;
-
-    endX = clientX;
-    endY = clientY;
-
-    if (startSelection) {
-      selection.style.display = 'initial';
-      selection.style.top = `${startY}px`;
-      selection.style.left = `${startX}px`;
-
-      selection.style.width = `${endX - startX}px`;
-      selection.style.height = `${endY - startY}px`;
-    }
-  },
-  mouseup() {
-    startSelection = false;
-
-    const { layerX, layerY } = event;
-
-    relativeEndX = layerX;
-    relativeEndY = layerY;
-
-    // mostrar o botão de corte
-    cropButton.style.display = 'initial';
-  },
-};
-
-Object.keys(events).forEach(eventName => {
-  photoPreview.addEventListener(eventName, events[eventName]);
-});
-
 function onLoadImage() {
   const { width, height } = image;
 
