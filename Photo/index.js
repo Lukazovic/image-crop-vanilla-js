@@ -1,17 +1,17 @@
-import Canvas from './Canvas.js';
-import Preview from './Preview.js';
-import Load from './Load.js';
-import SelectionTool from './SelectionTool.js';
-import Crop from './Crop.js';
-import Download from './Download.js';
+import createCanvas from './Canvas.js';
+import setPreview from './Preview.js';
+import configureLoad from './Load.js';
+import createSelectionTool from './SelectionTool.js';
+import canCrop from './Crop.js';
+import canDownload from './Download.js';
 
 const Photo = {};
 
-Canvas(Photo);
-Preview(Photo);
-Load(Photo);
-SelectionTool(Photo);
-Crop(Photo);
-Download(Photo);
+createCanvas(Photo);
+setPreview(Photo);
+configureLoad(Photo);
+createSelectionTool(Photo);
+canCrop(Photo);
+canDownload(Photo);
 
 export default Photo;
