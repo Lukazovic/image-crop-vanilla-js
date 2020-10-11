@@ -1,12 +1,15 @@
-<h1 align="center">Image Crop - Vanilla JS</h1>
+<a href="https://lukazovic.github.io/image-crop-vanilla-js/" target="_blank">
+  <h1 align="center">Image Crop - Vanilla JS</h1>
+</a>
 <h4 align="center">
   <img src="./.github/app-preview.gif" /><br>
 </h4>
 
 <p align="center">
+  <a href="https://lukazovic.github.io/image-crop-vanilla-js/">Web Page</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#wrench-built-with">Built With</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#heart_eyes-how-to-play">How to Use</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#heart_eyes-how-to-use">How to Use</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-how-to-contribute">How to Contribute</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#pencil-author">Author</a>
 </p>
@@ -26,6 +29,12 @@ I've implemented it to learn how to deal with image upload, preview, selection, 
 It was refactored to apply the Decorator Design Patter to make it easier to understand the code.
 
 ## :heart_eyes: How to Use
+
+### Online
+
+You can use the application [here](https://lukazovic.github.io/image-crop-vanilla-js/].
+
+### Local
 
 - Clone the project: `git clone https://github.com/Lukazovic/image-crop-vanilla-js.git`;
 - Go to the project folder: `cd image-crop-vanilla-js`;
