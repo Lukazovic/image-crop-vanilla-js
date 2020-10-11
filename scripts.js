@@ -18,9 +18,4 @@ cropButton.onclick = () => Photo.crop();
 
 // Download
 const downloadButton = document.getElementById('download');
-downloadButton.onclick = function () {
-  const a = document.createElement('a');
-  a.download = photoName + '-cropped.png';
-  a.href = canvas.toDataURL();
-  a.click();
-};
+downloadButton.onclick = () => Photo.download()
