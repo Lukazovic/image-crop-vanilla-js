@@ -83,10 +83,6 @@ Object.keys(events).forEach(eventName => {
   photoPreview.addEventListener(eventName, events[eventName]);
 });
 
-// Canvas
-let canvas = document.createElement('canvas');
-let ctx = canvas.getContext('2d');
-
 function onLoadImage() {
   const { width, height } = image;
 
