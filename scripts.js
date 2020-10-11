@@ -1,43 +1,18 @@
+const { default: Photo } = require("./Photo");
+
 const photoFile = document.getElementById('photo-file');
 let photoPreview = document.getElementById('photo-preview');
 let image = new Image();
 let photoName;
-// Select & Preview Image
 
+window.addEventListener('DOMContentLoaded', () => {
+  Photo.load();
+});
+
+// Select & Preview Image
 document.getElementById('select-image').onclick = function () {
   photoFile.click();
 };
-
-window.addEventListener('DOMContentLoaded', () => {
-  photoFile.addEventListener('change', () => {
-    let file = photoFile.files.item(0);
-
-    photoName = file.name;
-
-    let reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = function (event) {
-      image = new Image();
-      image.src = event.target.result;
-      image.onload = onLoadImage;
-    };
-  });
-});
-
-function onLoadImage() {
-  const { width, height } = image;
-
-  canvas.width = width;
-  canvas.height = height;
-
-  // limpar o contexto
-  ctx.clearRect(0, 0, width, height);
-
-  // desenhar a imagem no canvas
-  ctx.drawImage(image, 0, 0);
-
-  photoPreview.src = canvas.toDataURL();
-}
 
 // Cortar imagem
 const cropButton = document.getElementById('crop-image');
