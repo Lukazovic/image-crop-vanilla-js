@@ -6,7 +6,7 @@
 </h4>
 
 <p align="center">
-  <a href="https://lukazovic.github.io/image-crop-vanilla-js/">Web Page</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="https://lukazovic.github.io/image-crop-vanilla-js/" target="_blank">Web Page</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#wrench-built-with">Built With</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#heart_eyes-how-to-use">How to Use</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -32,7 +32,7 @@ It was refactored to apply the Decorator Design Patter to make it easier to unde
 
 ### Online
 
-You can use the application [here](https://lukazovic.github.io/image-crop-vanilla-js/].
+You can use the application [here](https://lukazovic.github.io/image-crop-vanilla-js/).
 
 ### Local
 
