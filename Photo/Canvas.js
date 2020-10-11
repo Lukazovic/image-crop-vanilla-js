@@ -1,4 +1,4 @@
 export default function (Photo) {
   Photo.canvas = document.createElement('canvas');
-  Photo.ctx = canvas.getContext('2d');
-}
+  Photo.ctx = Photo.canvas.getContext('2d');
+};

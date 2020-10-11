@@ -22,17 +22,17 @@ export default function (Photo) {
       Photo.endX = clientX;
       Photo.endY = clientY;
 
-      if (startSelection) {
+      if (Photo.startSelection) {
         Photo.selection.style.display = 'initial';
-        Photo.selection.style.top = `${startY}px`;
-        Photo.selection.style.left = `${startX}px`;
+        Photo.selection.style.top = `${Photo.startY}px`;
+        Photo.selection.style.left = `${Photo.startX}px`;
 
-        Photo.selection.style.width = `${endX - startX}px`;
-        Photo.selection.style.height = `${endY - startY}px`;
+        Photo.selection.style.width = `${Photo.endX - Photo.startX}px`;
+        Photo.selection.style.height = `${Photo.endY - Photo.startY}px`;
       }
     },
     mouseup() {
-      PhotostartSelection = false;
+      Photo.startSelection = false;
 
       const { layerX, layerY } = event;
 
@@ -47,4 +47,4 @@ export default function (Photo) {
   Object.keys(events).forEach(eventName => {
     Photo.photoPreview.addEventListener(eventName, events[eventName]);
   });
-}
+};

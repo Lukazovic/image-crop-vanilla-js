@@ -5,11 +5,11 @@ export default function (Photo) {
     Photo.photoFile.addEventListener('change', () => {
       let file = Photo.photoFile.files.item(0);
 
-      photoName = file.name;
+      Photo.photoName = file.name;
 
       let reader = new FileReader();
       reader.readAsDataURL(file);
-      reader.onload = onLoadReader
+      reader.onload = onLoadReader;
     });
 
     function onLoadReader(event) {
@@ -28,9 +28,9 @@ export default function (Photo) {
       Photo.ctx.clearRect(0, 0, width, height);
 
       // desenhar a imagem no canvas
-      Photo.ctx.drawImage(image, 0, 0);
+      Photo.ctx.drawImage(Photo.image, 0, 0);
 
       Photo.preview();
-    }
-  }
-}
+    };
+  };
+};

@@ -1,4 +1,6 @@
 export default function (Photo) {
+  Photo.cropButton = document.getElementById('crop-image');
+
   Photo.crop = function () {
     const { width: imgWidth, height: imgHeight } = Photo.image;
     const { width: previewWidth, height: previewHeight } = Photo.photoPreview;
@@ -19,12 +21,12 @@ export default function (Photo) {
     ];
 
     const [actualX, actualY] = [
-      +(relativeStartX * widthFactor),
-      +(relativeStartY * heightFactor),
+      +(Photo.relativeStartX * widthFactor),
+      +(Photo.relativeStartY * heightFactor),
     ];
 
     // pegar do ctx as regiões de corte da imagem
-    const croppedImage = ctx.getImageData(
+    const croppedImage = Photo.ctx.getImageData(
       actualX,
       actualY,
       croppedWidth,
@@ -45,9 +47,9 @@ export default function (Photo) {
     Photo.selection.style.display = 'none';
 
     // atualizar o preview da imagem
-    Photo.photoPreview.src = canvas.toDataURL();
+    Photo.photoPreview.src = Photo.canvas.toDataURL();
 
     // mostrar botão de download
     Photo.downloadButton.style.display = 'initial';
   };
-}
+};

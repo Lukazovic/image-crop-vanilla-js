@@ -1,21 +1,16 @@
-import Photo from './Photo/index'
-let photoPreview = document.getElementById('photo-preview');
-let image = new Image();
-let photoName;
+import Photo from './Photo/index.js';
 
 window.addEventListener('DOMContentLoaded', () => {
   Photo.load();
 });
 
-// Select & Preview Image
+// Select Image
 document.getElementById('select-image').onclick = () => {
-  document.getElementById('photo-file').photoFile.click();
+  document.getElementById('photo-file').click();
 };
 
-// Cortar imagem
-const cropButton = document.getElementById('crop-image');
-cropButton.onclick = () => Photo.crop();
+// Crop imagem
+Photo.cropButton.onclick = () => Photo.crop();
 
-// Download
-const downloadButton = document.getElementById('download');
-downloadButton.onclick = () => Photo.download()
+// Download Image
+Photo.downloadButton.onclick = () => Photo.download();
